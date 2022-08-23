@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+
+    <div class="A1">
+        <h1></h1>
+    </div>
+    <div class="Title">
+        <h1>Matriculation Result check </h1>
+    </div>
+    <div id="Whole">
+        <div class="form">
+            <form onsubmit="grade(); return false">
+                Enter Obtained Marks:
+
+                <input type="number" name="num" class="upbox" id="num1" max="850" placeholder="Enter Obtained Marks">
+                <br><br> Enter a Total Marks:
+
+                <input type="number" name="num" class="downbox" id="num2" min="850" max="850" placeholder="Enter Total Marks">
+
+                <br><br>
+                <button type="submit" class="button" onclick="grade">find</button>
+            </form>
+        </div>
+        <div class="result0">
+            <h3 id="result"> </h3>
+            <h3 id="result1"></h3>
+            <h3 id="result2"></h3>
+        </div>
+    </div>
+    <script>
+        function grade() {
+            let num1 = document.getElementById("num1").value
+            let num2 = document.getElementById("num2").value
+
+            let total = ((num1 / num2) * 100);
+            let decimal = Math.trunc(total);
+
+            if (decimal >= 90) {
+                document.getElementById("result").innerHTML = "You Got " + decimal + "  %   ";
+
+                document.getElementById("result1").innerHTML = "   A+ grade";
+
+
+                document.getElementById("result2").innerHTML = " Prefect !";
+
+            } else if (decimal >= 80) {
+                document.getElementById("result").innerHTML = "You Got " + decimal + "  %   ";
+
+
+                document.getElementById("result1").innerHTML = "   A grade";
+
+                document.getElementById("result2").innerHTML = " Excellent ! ";
+
+            } else if (decimal >= 70) {
+                document.getElementById("result").innerHTML = "You Got " + decimal + "  %   ";
+
+
+                document.getElementById("result1").innerHTML = "   B grade";
+
+
+                document.getElementById("result2").innerHTML = "Goof Work !";
+            } else if (decimal >= 60) {
+                document.getElementById("result").innerHTML = "You Got " + decimal + "  %   ";
+
+
+                document.getElementById("result1").innerHTML = "  C grade";
+
+
+                document.getElementById("result2").innerHTML = "Need to Improve !";
+
+            } else if (decimal >= 50) {
+                document.getElementById("result").innerHTML = "You Got " + decimal + "  %   ";
+
+
+                document.getElementById("result1").innerHTML = "   D grade";
+
+
+                document.getElementById("result2").innerHTML = "Poor Performence !";
+
+
+            } else {
+
+
+                document.getElementById("result").innerHTML = decimal + "  %   " + "You are Fail";
+
+
+                document.getElementById("result1").innerHTML = "   Better Luck Next Time";
+
+                document.getElementById("result2").innerHTML = "   Minimum 50% Required  to pass the Exam ";
+            }
+        }
+    </script>
+
+
+</body>
+
+
+</html>
